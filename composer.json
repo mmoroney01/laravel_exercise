@@ -8,9 +8,11 @@
         "php": ">=7.0.0",
         "fideloper/proxy": "~3.3",
         "guzzlehttp/guzzle": "^6.3",
+        "kevinrob/guzzle-cache-middleware": "^3.2",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
-        "rentberry/coinmarketcap-api": "^1.0"
+        "rentberry/coinmarketcap-api": "^1.0",
+        "symfony/cache": "^4.0"
     },
     "require-dev": {
         "filp/whoops": "~2.0",
