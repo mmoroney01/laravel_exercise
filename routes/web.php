@@ -11,5 +11,11 @@
 |
 */
 
+Auth::routes();
 
 Route::get('/', 'IndexController@show');
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
