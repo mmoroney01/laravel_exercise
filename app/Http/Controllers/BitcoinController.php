@@ -4,22 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use GuzzleHttp\Client;
+use GuzzleHttp\HandlerStack;
+use Kevinrob\GuzzleCache\CacheMiddleware;
+use Kevinrob\GuzzleCache\Storage\Psr6CacheStorage;
+use Symfony\Component\Cache\Adapter\FilesystemAdapter;
+use Kevinrob\GuzzleCache\Strategy\PrivateCacheStrategy;
+use Kevinrob\GuzzleCache\Strategy\GreedyCacheStrategy;
+
 class BitcoinController extends Controller
 {
-    public function getPrice()
-    {
-    	$client = new Rentberry\Coinmarketcap\Coinmarketcap();
-		$client->getTickers();
-		$client->getTicker('bitcoin');
-		$client->getExchangeRate('ethereum', 'USD');
-		$client->convertToFiat(10, 'ethereum', 'USD');
-		$client->convertToCrypto(10, 'USD', 'ethereum');
-		$client->getGlobals();
 
-		return view('bitcoin/price', [
-            'client' => $client,
-        ]);
 
-    }
 
 }

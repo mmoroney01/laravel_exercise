@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 use GuzzleHttp\Client;
 use GuzzleHttp\HandlerStack;
 use Kevinrob\GuzzleCache\CacheMiddleware;
@@ -13,15 +14,20 @@ use Kevinrob\GuzzleCache\Strategy\GreedyCacheStrategy;
 
 class IndexController extends Controller
 {
+
 	public function show()
     {
-        // Retrieve information about the bitcoin currency
-        $bitcoinInfo = $this->getCryptoCurrencyInformation("bitcoin", "USD");
+        // Retrieve information about the bitcoin currency       
+        $bitcoinInfoUSD = $this->getCryptoCurrencyInformation("bitcoin", "USD");
+        $bitcoinInfoEUR = $this->getCryptoCurrencyInformation("bitcoin", "EUR");
+        $bitcoinInfoAUD = $this->getCryptoCurrencyInformation("bitcoin", "AUD");
         // Return a view as response (default.blade.php)
 
 
         return view("index", [
-            "bitcoin" => $bitcoinInfo
+            "bitcoinUSD" => $bitcoinInfoUSD,
+            "bitcoinEUR" => $bitcoinInfoEUR,
+            "bitcoinAUD" => $bitcoinInfoAUD
         ]);
     }
 
@@ -83,8 +89,8 @@ class IndexController extends Controller
         // Initialize the client with the handler option and return it
         return new Client(['handler' => $stack]);
     }
-
     // public function show(){
     // 	return view("index");
     // }
+
 }
