@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
 	@include('layouts.buttons')
 	
 	<ul>
@@ -9,5 +8,4 @@
 	</ul>
 
 	@include('layouts.pricechange')
-
 @endsection

@@ -16,19 +16,21 @@ class IndexController extends Controller
 {
 	public function index()
 	{
-		$bitcoinInfoUSD = $this->getCryptoCurrencyInformation("bitcoin", "USD");
+		// Grab data from the API
+		$bitcoinInfo = $this->getCryptoCurrencyInformation("bitcoin", "USD");
 
+		// Include in the returned view
         return view("index/usd", [
-            "bitcoin" => $bitcoinInfoUSD,
+            "bitcoin" => $bitcoinInfo,
         ]);
 	}
 
 	public function show($type)
 	{
-		$bitcoinInfoUSD = $this->getCryptoCurrencyInformation("bitcoin", "{$type}");
+		$bitcoinInfo = $this->getCryptoCurrencyInformation("bitcoin", "{$type}");
 
         return view("index/{$type}", [
-            "bitcoin" => $bitcoinInfoUSD,
+            "bitcoin" => $bitcoinInfo,
         ]);
 	}
 
