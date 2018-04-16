@@ -13,10 +13,8 @@
 
 Auth::routes();
 
-Route::get('/usd', 'IndexController@showUSD');
+Route::get('/', 'IndexController@index');
 
-Route::get('/eur', 'IndexController@showEUR');
-
-Route::get('/aud', 'IndexController@showAUD');
+Route::get('/{type}', 'IndexController@show');
 
 Route::get('/home', 'HomeController@index')->name('home');
