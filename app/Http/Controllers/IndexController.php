@@ -21,7 +21,7 @@ class IndexController extends Controller
         $bitcoinInfoUSD = $this->getCryptoCurrencyInformation("bitcoin", "USD");
 
         // Return a view as response (default.blade.php)
-        return view("index", [
+        return view("index/usd", [
             "bitcoin" => $bitcoinInfoUSD,
         ]);
     }

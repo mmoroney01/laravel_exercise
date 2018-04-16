@@ -13,7 +13,7 @@
 
 Auth::routes();
 
-Route::get('/', 'IndexController@showUSD');
+Route::get('/usd', 'IndexController@showUSD');
 
 Route::get('/eur', 'IndexController@showEUR');
 
