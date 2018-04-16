@@ -15,19 +15,34 @@ use Kevinrob\GuzzleCache\Strategy\GreedyCacheStrategy;
 class IndexController extends Controller
 {
 
-	public function show()
+	public function showUSD()
     {
-        // Retrieve information about the bitcoin currency       
+        // Retrieve information about the bitcoin currency 
         $bitcoinInfoUSD = $this->getCryptoCurrencyInformation("bitcoin", "USD");
-        $bitcoinInfoEUR = $this->getCryptoCurrencyInformation("bitcoin", "EUR");
-        $bitcoinInfoAUD = $this->getCryptoCurrencyInformation("bitcoin", "AUD");
+        // $bitcoinInfoEUR = $this->getCryptoCurrencyInformation("bitcoin", "EUR");
+        // $bitcoinInfoAUD = $this->getCryptoCurrencyInformation("bitcoin", "AUD");
+
         // Return a view as response (default.blade.php)
-
-
         return view("index", [
             "bitcoinUSD" => $bitcoinInfoUSD,
+        ]);
+    }
+
+    public function showEUR()
+    {
+    	$bitcoinInfoEUR = $this->getCryptoCurrencyInformation("bitcoin", "EUR");
+
+    	return view("index/eur", [
             "bitcoinEUR" => $bitcoinInfoEUR,
-            "bitcoinAUD" => $bitcoinInfoAUD
+        ]);
+    }
+
+    public function showAUD()
+    {
+    	$bitcoinInfoAUD = $this->getCryptoCurrencyInformation("bitcoin", "AUD");
+
+    	return view("index/aud", [
+            "bitcoinAUD" => $bitcoinInfoAUD,
         ]);
     }
 

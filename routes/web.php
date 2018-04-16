@@ -13,8 +13,10 @@
 
 Auth::routes();
 
-Route::get('/bitcoin/price', 'BitcoinController@price');
+Route::get('/', 'IndexController@showUSD');
 
-Route::get('/', 'IndexController@show');
+Route::get('/eur', 'IndexController@showEUR');
+
+Route::get('/aud', 'IndexController@showAUD');
 
 Route::get('/home', 'HomeController@index')->name('home');
