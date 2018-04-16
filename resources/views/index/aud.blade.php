@@ -1,5 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-	<p>fddfa</p>
+
+	@include('layouts.buttons')
+	
+	<ul>
+	Current Price: <b>$ {{ $bitcoin["price_aud"] }}</b> <br>
+	</ul>
+
+	@include('layouts.pricechange')
+
 @endsection

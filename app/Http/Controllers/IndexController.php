@@ -19,12 +19,10 @@ class IndexController extends Controller
     {
         // Retrieve information about the bitcoin currency 
         $bitcoinInfoUSD = $this->getCryptoCurrencyInformation("bitcoin", "USD");
-        // $bitcoinInfoEUR = $this->getCryptoCurrencyInformation("bitcoin", "EUR");
-        // $bitcoinInfoAUD = $this->getCryptoCurrencyInformation("bitcoin", "AUD");
 
         // Return a view as response (default.blade.php)
         return view("index", [
-            "bitcoinUSD" => $bitcoinInfoUSD,
+            "bitcoin" => $bitcoinInfoUSD,
         ]);
     }
 
@@ -33,7 +31,7 @@ class IndexController extends Controller
     	$bitcoinInfoEUR = $this->getCryptoCurrencyInformation("bitcoin", "EUR");
 
     	return view("index/eur", [
-            "bitcoinEUR" => $bitcoinInfoEUR,
+            "bitcoin" => $bitcoinInfoEUR,
         ]);
     }
 
@@ -42,7 +40,7 @@ class IndexController extends Controller
     	$bitcoinInfoAUD = $this->getCryptoCurrencyInformation("bitcoin", "AUD");
 
     	return view("index/aud", [
-            "bitcoinAUD" => $bitcoinInfoAUD,
+            "bitcoin" => $bitcoinInfoAUD,
         ]);
     }
 
@@ -104,8 +102,4 @@ class IndexController extends Controller
         // Initialize the client with the handler option and return it
         return new Client(['handler' => $stack]);
     }
-    // public function show(){
-    // 	return view("index");
-    // }
-
 }
