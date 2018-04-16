@@ -16,8 +16,10 @@ class IndexController extends Controller
 	public function show()
     {
         // Retrieve information about the bitcoin currency
-        $bitcoinInfo = $this->getCryptoCurrencyInformation("bitcoin", "EUR");
+        $bitcoinInfo = $this->getCryptoCurrencyInformation("bitcoin", "USD");
         // Return a view as response (default.blade.php)
+
+
         return view("index", [
             "bitcoin" => $bitcoinInfo
         ]);
