@@ -1,10 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.pixeladmin')
 
 @section('content')
 	@include('layouts.buttons')
 	
 	<ul>
-	Current Price: <b>$ {{ $bitcoin["price_aud"] }}</b> <br>
+	Current Price (AUD): <b>$ {{ round($bitcoin["price_aud"], 2) }}</b> <br>
 	</ul>
 
 	@include('layouts.pricechange')

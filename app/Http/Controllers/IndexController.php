@@ -20,7 +20,7 @@ class IndexController extends Controller
 		$bitcoinInfo = $this->getCryptoCurrencyInformation("bitcoin", "USD");
 
 		// Include in the returned view
-        return view("index/usd", [
+        return view("index", [
             "bitcoin" => $bitcoinInfo,
         ]);
 	}
@@ -29,7 +29,7 @@ class IndexController extends Controller
 	{
 		$bitcoinInfo = $this->getCryptoCurrencyInformation("bitcoin", "{$type}");
 
-        return view("index/{$type}", [
+        return view("price/{$type}", [
             "bitcoin" => $bitcoinInfo,
         ]);
 	}

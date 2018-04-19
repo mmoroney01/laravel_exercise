@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.pixeladmin')
 
 @section('content')
 <div class="container">
